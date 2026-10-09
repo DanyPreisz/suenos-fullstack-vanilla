@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Suenos</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <main class="shell">
+    <section id="auth-view" class="auth card">
+      <p class="eyebrow">Diario</p>
+      <h1>Suenos</h1>
+      <div class="tabs">
+        <button class="tab active" type="button" data-mode="login">Entrar</button>
+        <button class="tab" type="button" data-mode="register">Crear cuenta</button>
+      </div>
+      <form id="auth-form">
+        <label>Usuario <input name="username" required minlength="3" maxlength="20" autocomplete="username" /></label>
+        <label>Contrasena <input name="password" type="password" required minlength="6" autocomplete="current-password" /></label>
+        <p id="auth-error" class="error" hidden></p>
+        <button id="auth-submit" class="primary" type="submit">Entrar</button>
+      </form>
+    </section>
+    <section id="app-view" class="hidden">
+      <header>
+        <div><p class="eyebrow"><strong id="count">0</strong> entradas</p><h1>Suenos</h1></div>
+        <div class="who"><strong id="user-name"></strong><button id="logout" class="ghost" type="button">Salir</button></div>
+      </header>
+      <form id="dream-form" class="card form">
+        <input id="day" type="date" required />
+        <input id="title" placeholder="Titulo" maxlength="80" required />
+        <input id="tag" placeholder="Etiqueta" maxlength="30" />
+        <textarea id="body" placeholder="Que sonaste" maxlength="4000"></textarea>
+        <button class="primary" type="submit">Guardar</button>
+      </form>
+      <p id="form-error" class="error" hidden></p>
+      <input id="search" type="search" placeholder="Buscar" />
+      <ul id="list"></ul>
+    </section>
+  </main>
+  <script type="module" src="/js/app.js"></script>
+</body>
+</html>
